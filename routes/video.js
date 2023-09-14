@@ -25,7 +25,6 @@ router.get("/", function (req, res, next) {
       accept: "application/json",
     },
   };
-  console.log(options);
 
   // Results found
   axios
