@@ -1,0 +1,20 @@
+{{!-- Page title --}}
+<div class="section">
+    <div class="page-title">
+        <a href="javascript:history.back()" class="back-button"><i class="fa fa-angle-left"></i></a>
+        <div class="page-headings">
+            <p class="heading">Related videos</p>
+            <p class="subheading">for "{{searchTermForVideo}}"</p>
+        </div>
+    </div>
+    {{!-- Page body: list results --}}
+    <div class="video-container">
+        {{#each formattedVideoData}}
+        <div class="video-list">
+            <p class="video-title">{{this.title}}</p>
+            <iframe class="video" src="https://www.youtube.com/embed/{{this.id}}">
+            </iframe>
+        </div>
+        {{/each}}
+    </div>
+</div>

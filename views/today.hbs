@@ -1,0 +1,18 @@
+{{!-- Page body: list results --}}
+<div class="section">
+    <p class="results">Search Results: {{formattedTodayData.length}}</p>
+    {{#each formattedTodayData}}
+    <div class="event-container">
+        <div class="event-details">
+            <h2>{{this.title}}</h2>
+            <h3>{{this.venue}} | {{this.venue_city}}, {{this.venue_state}}</h3>
+            <h4>{{this.date}}</h4>
+
+        </div>
+        <div class="find-more">
+            <a href="/video?name={{this.title}}"><button>Find
+                    Out More</button></a>
+        </div>
+    </div>
+    {{/each}}
+</div>

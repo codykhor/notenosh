@@ -1,0 +1,27 @@
+{{!-- Page title --}}
+<div class="section">
+    <div class="page-title">
+    <a href="javascript:history.back()" class="back-button"><i class="fa fa-angle-left"></i></a>
+        <div class="page-headings">
+            <p class="heading">Recommended restaurants</p>
+            <p class="subheading">located near the venue for "{{title}}"</p>
+        </div>
+    </div>
+    {{!-- Page body: list results --}}
+    <div class="list-container">
+    {{#each formattedFoodData}}
+    <div class="food-container">
+        <a href={{this.url}} target="_blank" rel="noopener noreferrer">
+            <div class="food-image">
+                <img src={{this.image}} class="food-image" alt={{this.name}}>
+            </div>
+            <div class="food-details">
+                <h2>{{this.name}}</h2>
+                <h3>{{this.address}}</h3>
+                <h4>{{this.phone}} | {{this.price}}</h4>
+            </div>
+        </a>
+    </div>
+    {{/each}}
+    </div>
+</div>

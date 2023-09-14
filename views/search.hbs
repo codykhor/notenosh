@@ -1,0 +1,28 @@
+{{!-- Search bar --}}
+<form id="search-form" action="/search" method="get">
+    <input type="text" id="search" name="keyword" placeholder="Search event">
+    <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+
+{{!-- Page body: list results --}}
+<div class="section">
+    {{#if formattedEventData.length}}
+    <p class="results">Search Results: {{formattedEventData.length}}</p>
+    {{#each formattedEventData}}
+    <div class="event-container">
+        <div class="event-details">
+            <h2>{{this.title}}</h2>
+            <h3>{{this.venue}} | {{this.venue_city}}, {{this.venue_state}}</h3>
+            <h4>{{this.date}}</h4>
+
+        </div>
+        <div class="find-more">
+            <a href="/food?postcode={{this.venue_postal}}&city={{this.venue_city}}&title={{this.title}}"><button>Find
+                    Restaurants</button></a>
+        </div>
+    </div>
+    {{/each}}
+    {{else}}
+    <p class="results">No search results.</p>
+    {{/if}}
+</div>
