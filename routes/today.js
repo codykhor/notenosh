@@ -26,7 +26,7 @@ router.get("/", async function (req, res, next) {
   try {
     const options = createTodayList(startDate, endDate);
     const url = `https://${options.hostname}${options.path}`;
-    console.log(url);
+    //console.log(url);
     const response = await axios.get(url);
     if (response.status === 200) {
       const data = response.data;
